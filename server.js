@@ -1,9 +1,12 @@
 require("dotenv").config();
 const http = require("http");
+const cors =require('cors');
 const express = require("express");
 const path = require("path");
 const app = express();
-
+app.use(cors({
+  origin: '*'
+}));
 const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 
